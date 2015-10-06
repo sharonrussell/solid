@@ -1,16 +1,14 @@
-﻿using System;
-
-namespace BreakingOpenClosedPrinciple
+﻿namespace BreakingOpenClosedPrinciple
 {
     public class Product
     {
-        private readonly ProductType _type;
+        private readonly IProductRenderer _productRenderer;
         private readonly decimal _price;
 
-        public Product(decimal price, ProductType type)
+        public Product(decimal price, IProductRenderer productRenderer)
         {
             _price = price;
-            _type = type;
+            _productRenderer = productRenderer;
         }
 
         /// <summary>
@@ -18,17 +16,7 @@ namespace BreakingOpenClosedPrinciple
         /// </summary>
         public void Render()
         {
-            if (_type == ProductType.Standard)
-            {
-                Console.WriteLine("Hi, I am a standard product that costs £{0}", _price);
-            }
-
-            if (_type == ProductType.Featured)
-            {
-                Console.WriteLine("******* WOO HOOO *******");
-                Console.WriteLine("******* FEATURED PRODUCT HERE **********");
-                Console.WriteLine("******* I COST £{0} **********", _price);
-            }
+            _productRenderer.Render(_price);
         }
 
         public string[] GetImageFileNames()

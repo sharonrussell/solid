@@ -45,9 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FeaturedProductRenderer.cs" />
+    <Compile Include="IRenderProducts.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="ProductConsole.cs" />
     <Compile Include="ProductType.cs" />
+    <Compile Include="SecretProductRenderer.cs" />
+    <Compile Include="StandardProductRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

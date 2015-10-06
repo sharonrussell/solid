@@ -5,10 +5,6 @@
         void Accelerate();
         void Brake();
         void ChangeGear(int gear);
-        void TurnOnRadio();
-        void TurnOffRadio();
-        void OpenSunRoof(int percentOpen);
-        void CloseSunRoof();
     }
 
     #region What's wrong with the above?

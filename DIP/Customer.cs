@@ -4,7 +4,12 @@ namespace BreakingDependencyInversionPrinciple
 {
     public class Customer
     {
-        ExceptionLogger _exceptionLogger = new ExceptionLogger();
+        readonly IExceptionLogger _exceptionLogger;
+
+        public Customer(IExceptionLogger exceptionLogger)
+        {
+            _exceptionLogger = exceptionLogger;
+        }
 
         public void Add()
         {
@@ -19,15 +24,7 @@ namespace BreakingDependencyInversionPrinciple
         }
     }
 
-    public class ExceptionLogger
-    {
-        public void Log(Exception ex)
-        {
-            //Log the important details of the exception somewhere useful.
-        }
-    }
-
-#region What's wrong with the above?
+    #region What's wrong with the above?
 // The Customer class nicely delegates responsibility for logging exceptions to the ExceptionLogger class 
 // (therefore adhering to SRP). Unfortunately this code breaks the Dependency Inversion Principle, 
 // because it magically creates a instance of the ExceptionLogger internally when and instance 

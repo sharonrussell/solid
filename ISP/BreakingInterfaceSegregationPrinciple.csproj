@@ -42,8 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BudgetCar.cs" />
+    <Compile Include="HeatedSeats.cs" />
+    <Compile Include="IHeatedSeats.cs" />
+    <Compile Include="IHasRadio.cs" />
+    <Compile Include="IHasSunroof.cs" />
     <Compile Include="IVehcile.cs" />
-    <Compile Include="Vehicles.cs" />
+    <Compile Include="MotorCycle.cs" />
+    <Compile Include="LuxuryCar.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

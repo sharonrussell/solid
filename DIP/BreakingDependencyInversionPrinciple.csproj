@@ -43,6 +43,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
+    <Compile Include="ExceptionLogger.cs" />
+    <Compile Include="IExceptionLogger.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
